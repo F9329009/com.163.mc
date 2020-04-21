@@ -34,8 +34,7 @@ setInterval(qrcodeDiv, 4000);
 // 游戏目录显示隐藏（bug待解决）
 $(".topbar-left").hover(
     function () {
-        console.log(1111111);
-        $(".topbar-menu").animate(
+        $(".topbar-menu").delay(500).animate(
             {
                 height: 500,
             },
@@ -43,8 +42,7 @@ $(".topbar-left").hover(
         );
     },
     function () {
-        console.log(22222222222);
-        $(".topbar-menu").animate(
+        $(".topbar-menu").delay(500).animate(
             {
                 height: 0,
             },
