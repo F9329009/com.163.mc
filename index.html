@@ -46,14 +46,14 @@
             <a href="javascript:;"><i></i>热点推荐</a>
         </div>
         <!-- 游戏目录下拉 -->
-        <div class="topbar-menu">
-            <div class="topbar-menu-container">
-                <ul class="topbar-menu-title">
+        <div class="topbar-game">
+            <div class="topbar-game-container">
+                <ul class="topbar-game-title">
                     <li><b>客户端游戏</b></li>
                     <li><b>手机游戏</b></li>
                     <li><b>游戏辅助</b></li>
                 </ul>
-                <ul class="topbar-menu-list">
+                <ul class="topbar-game-list">
                     <li>
                         <p>角色扮演</p>
                         <a href="Javascript:;"><em>梦幻西游电脑版</em></a>
@@ -91,7 +91,7 @@
                         <a class="topbar-list-more" href="">更多热门端游</a>
                     </li>
                 </ul>
-                <ul class="topbar-menu-list">
+                <ul class="topbar-game-list">
                     <li>
                         <p>热门推荐</p>
                         <a href="Javascript:;"><em>梦幻西游手游</em></a>
@@ -215,7 +215,7 @@
                         <a class="topbar-list-more" href="">更多热门端游</a>
                     </li>
                 </ul>
-                <ul class="topbar-menu-list">
+                <ul class="topbar-game-list">
                     <li>
                         <a href="Javascript:;"><em>梦幻西游</em></a>
                         <a href="Javascript:;"><em>梦幻西游</em></a>
@@ -236,6 +236,73 @@
                         <a href="Javascript:;"><em>梦幻西游</em></a>
                     </li>
                 </ul>
+            </div>
+        </div>
+        <!-- 热点推荐下拉 -->
+        <div class="topbar-hot">
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="./images/topbar-hot_1.jpg" alt="">
+                        <div class="topbar-hot-game-title">
+                            <span>《一梦江湖》立夏集</span>
+                            <span>立夏集盛大开幕！</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./images/topbar-hot_2.jpg" alt="">
+                        <div class="topbar-hot-game-title">
+                            <span>《梦幻西游手游》</span>
+                            <span>试剑天下，谁与争锋</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./images/topbar-hot_3.jpg" alt="">
+                        <div class="topbar-hot-game-title">
+                            <span>明日之后，惊涛救援</span>
+                            <span></span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./images/topbar-hot_4.jpg" alt="">
+                        <div class="topbar-hot-game-title">
+                            <span>“花与剑”新版来袭！</span>
+                            <span>鲜衣怒马，少年仗剑天涯</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./images/topbar-hot_5.jpg" alt="">
+                        <div class="topbar-hot-game-title">
+                            <span>《梦幻西游三维版》</span>
+                            <span>新门派新主角</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./images/topbar-hot_6.jpg" alt="">
+                        <div class="topbar-hot-game-title">
+                            <span>阴阳师百鬼夜话</span>
+                            <span></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="topbar-hot-foot">
+                <span>我的足迹：</span>
+            </div>
+            <div class="topbar-hot-btn">
+                <a href=""><i></i>注册账号</a>
+                <a href=""><i></i>安卓充值</a>
+                <a href=""><i></i>客服中心</a>
             </div>
         </div>
     </div>
@@ -296,12 +363,69 @@
     </div>
     <!-- 第二版内容 -->
     <div class="carousel">
-
+        <dic class="carousel-wrapper">
+            <!-- 标题 -->
+            <div class="carousel-title"></div>
+            <!-- 轮播图 -->
+            <div class="outer_wrap">
+                <div class="gallery_container">
+                    <div class="gallery_item gallery_active">
+                        <img src="./images/banner-1_be5c22e.jpg" alt="banner">
+                        <span></span>
+                    </div>
+                    <div class="gallery_item gallery_right_middle">
+                        <img src="./images/banner-2_4134eaf.jpg" alt="banner">
+                        <span></span>
+                    </div>
+                    <div class="gallery_item">
+                        <img src="./images/banner-3_f87ac78.jpg" alt="banner">
+                        <span></span>
+                    </div>
+                    <div class="gallery_item">
+                        <img src="./images/banner-4_5b262dc.jpg" alt="banner">
+                        <span></span>
+                    </div>
+                    <div class="gallery_item">
+                        <img src="./images/banner-5_18ee31a.jpg" alt="banner">
+                        <span></span>
+                    </div>
+                    <div class="gallery_item">
+                        <img src="./images/banner-6_5329933.jpg" alt="banner">
+                        <span></span>
+                    </div>
+                    <div class="gallery_item">
+                        <img src="./images/banner-7_896d11b.jpg" alt="banner">
+                        <span></span>
+                    </div>
+                    <div class="gallery_item">
+                        <img src="./images/banner-8_a9cab4b.jpg" alt="banner">
+                        <span></span>
+                    </div>
+                    <div class="gallery_item gallery_left_middle">
+                        <img src="./images/banner-9_5edfa4e.jpg" alt="banner">
+                        <span></span>
+                    </div>
+                    <ul class="gallery_pagination_list">
+                        <li class="pagination_btn active">0</li>
+                        <li class="pagination_btn">1</li>
+                        <li class="pagination_btn">2</li>
+                        <li class="pagination_btn">3</li>
+                        <li class="pagination_btn">4</li>
+                        <li class="pagination_btn">5</li>
+                        <li class="pagination_btn">6</li>
+                        <li class="pagination_btn">7</li>
+                        <li class="pagination_btn">8</li>
+                    </ul>
+                    <a href="javascript:;" class="gallery_prev btns"></a>
+                    <a href="javascript:;" class="gallery_next btns"></a>
+                </div>
+            </div>
+        </dic>
     </div>
     <!-- 第三版内容 -->
-    <div class="bottom">
+    <!-- <div class="bottom">
 
-    </div>
+    </div> -->
 
     <!-- Js -->
     <script src="./lib/jquery-3.4.1.min.js"></script>
