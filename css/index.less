@@ -159,7 +159,7 @@
 // 游戏目录下拉
 .topbar-game {
     position: absolute;
-    top: 55px;
+    top: 54px;
     left: 0;
     width: 100%;
     height: 0;
@@ -169,6 +169,7 @@
     overflow: hidden;
     opacity: 0.95;
     transition: height 0.4s ease 0s;
+    border-top: 1px solid #d8d8d8;
 
     &:hover {
         height: 500px;
@@ -282,6 +283,10 @@
             line-height: 24px;
             text-align: left;
             font-size: 12px;
+
+            &:hover {
+                color: #bc2e2e;
+            }
         }
 
         .topbar-list-more {
@@ -301,6 +306,23 @@
             border-bottom-left-radius: 2px;
             text-align: left;
             font-weight: 400;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        .topbar-game-list-btn {
+            width: 75px !important;
+            height: 18px;
+            line-height: 18px !important;
+            margin: 5px 0;
+            display: inline-block;
+            padding-left: 0 !important;
+            text-indent: 25px;
+            color: #bc3030 !important;
+            background: url(https://nie.res.netease.com/comm/nie.topBar/images/sprite-w_dd519f4.png)
+                0 -338px no-repeat;
         }
     }
 }
@@ -308,7 +330,7 @@
 // 热点推荐下拉
 .topbar-hot {
     position: absolute;
-    top: 55px;
+    top: 54px;
     left: 0;
     width: 100%;
     min-width: 1260px;
@@ -317,6 +339,7 @@
     background-color: #fff;
     overflow: hidden;
     transition: height 0.4s ease 0s;
+    border-top: 1px solid #d8d8d8;
 
     a {
         display: inline-block;
@@ -404,6 +427,10 @@
             &:nth-child(3) i {
                 background-position: -36px -443px;
             }
+
+            &:hover {
+                color: #bc2e2e;
+            }
         }
 
         i {
@@ -417,6 +444,7 @@
         }
     }
 }
+
 // 第一版内容
 .header {
     position: relative;
@@ -516,7 +544,7 @@
 
         div {
             position: absolute;
-            top: 0;
+            top: 100%;
             left: 0;
             width: 99px;
             height: 2px;
@@ -826,4 +854,276 @@
     width: 100%;
     height: 232px;
     background-image: url(../images/bg-footer_b35da81.jpg);
+
+    .bottom-copy {
+        width: 1024px;
+        text-align: left;
+        margin: 0 auto;
+        padding: 15px 0 10px;
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .bottom-part1-logo {
+        display: inline-block;
+        vertical-align: middle;
+        height: 48px;
+        min-width: 300px;
+
+        a {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 2px;
+        }
+    }
+
+    .bottom-part1-nav {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        color: #9e9e9e;
+
+        .bottom-part1-nav-i1 a {
+            color: #6fb451;
+        }
+
+        .bottom-part1-nav-i2 {
+            height: 28px;
+            line-height: 28px;
+            text-align: left;
+
+            a {
+                color: #fff;
+            }
+        }
+
+        .bottom-part1-nav-i2-guardianship {
+            display: inline-block;
+            color: #fff;
+            background-color: #610000;
+            position: absolute;
+            z-index: 2;
+            right: 0;
+            height: 26px;
+            line-height: 26px;
+            padding: 0 3px;
+            top: 21px;
+        }
+    }
+
+    .bottom-part2 {
+        padding-top: 10px;
+        line-height: 24px;
+        color: #9e9e9e;
+
+        p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+
+        span {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            vertical-align: top;
+            color: #9e9e9e;
+        }
+    }
+
+    .bottom-part3 {
+        color: #9e9e9e;
+    }
+}
+
+// 视频
+.video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    display: none;
+}
+.video-bg {
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg-pop_efca8c6.png) center;
+
+    video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -450px/2;
+        margin-left: -800px/2;
+    }
+
+    .stop {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: 420px;
+        margin-top: -225px;
+        width: 27px;
+        height: 27px;
+        background: url(../images/close_cbca339.png) no-repeat center;
+        background-size: cover;
+        cursor: pointer;
+        transition: transform 0.5s;
+
+        &:hover {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+// 左侧扫码下载
+.left-download {
+    position: fixed;
+    top: 50%;
+    left: -210px;
+    width: 210px;
+    height: 335px;
+    margin-top: -150px;
+    background: url(https://mc.res.netease.com/pc/fab/20171220151954/img/bg-dl-module-2_87e8d04.png)
+        center;
+    transition: left 0.8s;
+    z-index: 99;
+
+    .download-qrcode {
+        position: relative;
+        left: 50%;
+        width: 140px;
+        height: 140px;
+        margin-top: 38px;
+        margin-left: -70px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        div {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 135px;
+            height: 2px;
+            background: url(../images/scan-line_7e83732.png) center;
+            animation: scan 1.5s infinite alternate linear;
+        }
+    }
+
+    .download-buttons {
+        position: relative;
+        left: 50%;
+        width: 137px;
+        margin-top: 10px;
+        margin-left: -68px;
+
+        a {
+            font-size: 0;
+            display: block;
+            width: 137px;
+            height: 41px;
+            cursor: pointer;
+        }
+
+        .button-ios {
+            background: url(../images/btn-dl-ios_437c568.png) center;
+        }
+
+        .button-android {
+            margin-top: 10px;
+            background: url(../images/btn-dl-and_af56775.png) center;
+        }
+    }
+
+    p {
+        margin: 20px auto;
+        width: 100px;
+        font-size: 14px;
+        color: #2f2f2f;
+        border-bottom: 1px solid #2f2f2f;
+        cursor: pointer;
+    }
+
+    .btn-downloadClose {
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        top: -40px;
+        left: 96px;
+        transition: all 0.5s;
+        background: url(../images/btnDownClose_8dd25a8.png) center no-repeat;
+        cursor: pointer;
+
+        &:hover {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+// 右侧大神窗口
+.right-download {
+    position: fixed;
+    top: 50%;
+    right: -210px;
+    width: 174px;
+    height: 261px;
+    margin-top: -150px;
+    text-align: center;
+    background: url(../images/right-dashen-bg_9240eca.png) center no-repeat;
+    transition: right 0.8s;
+    z-index: 99;
+
+    .qrcode-scan {
+        position: absolute;
+        top: 33px;
+        left: 14px;
+        width: 144px;
+        height: 144px;
+
+        div {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 144px;
+            height: 2px;
+            background: url(../images/scan-line_7e83732.png) center;
+            animation: scandashen 1.5s infinite alternate linear;
+        }
+    }
+
+    img {
+        position: absolute;
+        top: 34px;
+        left: 16px;
+        width: 144px;
+        height: 144px;
+    }
+
+    span {
+        position: relative;
+        top: 220px;
+        font-size: 16px;
+    }
+
+    .btn-dsdownloadClose {
+        width: 27px;
+        height: 27px;
+        position: absolute;
+        top: -10px;
+        left: 158px;
+        transition: all 0.5s;
+        background: url(../images/dsbtnDownClose_be75166.png) center no-repeat;
+        cursor: pointer;
+    }
 }

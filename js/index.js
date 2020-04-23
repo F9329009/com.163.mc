@@ -11,15 +11,15 @@ $(".header-ad").hover(
 
 // 二维码绿线上下移动
 function qrcodeDiv() {
-    $(".header-qrcode div").animate(
+    $(".qrcode div").animate(
         {
-            top: $(".header-qrcode img").height(),
+            top: 0,
         },
         2000,
         function () {
-            $(".header-qrcode div").animate(
+            $(this).animate(
                 {
-                    top: 0,
+                    top: $(this).siblings("img").height(),
                 },
                 2000
             );
@@ -31,8 +31,21 @@ qrcodeDiv();
 // 设置定时器循环执行
 setInterval(qrcodeDiv, 4000);
 
-// 游戏目录显示隐藏（bug待解决）
+// 游戏目录显示隐藏
 $(".topbar-left").hover(
+    function () {
+        $(".topbar-game").css({
+            height: 500,
+        });
+    },
+    function () {
+        $(".topbar-game").css({
+            height: 0,
+        });
+    }
+);
+
+$(".topbar-game").hover(
     function () {
         $(".topbar-game").css({
             height: 500,
@@ -154,6 +167,29 @@ $(".topbar-recommend").hover(
     }
 );
 
+$(".topbar-hot").hover(
+    function () {
+        $(".topbar-hot").css({
+            height: 378,
+        });
+    },
+    function () {
+        $(".topbar-hot").css({
+            height: 0,
+        });
+    }
+);
+
+// 打开视频
+$(".header-video a").on("click", function () {
+    $(".video").show().find("video").trigger("play")[0].currentTime = 0;
+});
+
+// 关闭视频
+$(".video .stop").on("click", function () {
+    $(".video").hide().find("video").trigger("pause");
+});
+
 // 轮播图
 function getGallery(index) {
     let $index = $(".gallery_active").index();
@@ -258,21 +294,27 @@ function getGallery(index) {
 }
 
 // 自动轮播图
-setInterval(getGallery, 3000);
+let GalleryTimer = setInterval(getGallery, 3000);
 
 // 轮播图下一页
 $(".gallery_next").on("click", function () {
+    clearInterval(GalleryTimer);
     getGallery($(".gallery_active").index());
+    GalleryTimer = setInterval(getGallery, 3000);
 });
 
 // 轮播图上一页
 $(".gallery_prev").on("click", function () {
+    clearInterval(GalleryTimer);
     getGallery($(".gallery_active").index() - 2);
+    GalleryTimer = setInterval(getGallery, 3000);
 });
 
 // 轮播图小点跳转
 $(".gallery_pagination_list").on("click", "li", function () {
+    clearInterval(GalleryTimer);
     getGallery($(this).index() - 1);
+    GalleryTimer = setInterval(getGallery, 3000);
 });
 
 // 轮播图小点宽度自适应
@@ -285,4 +327,63 @@ $(".gallery_pagination_list").css({
             ($(".gallery_pagination_list li").width() + 16)) /
         2
     ),
+});
+
+// 滚动到指定位置两侧弹出
+var downloadFlag = true;
+function getDownload() {
+    if ($(".left-download").offset().top > $(".carousel").offset().top) {
+        if (downloadFlag) {
+            downloadFlag = false;
+            $(".left-download").animate(
+                {
+                    left: 30,
+                },
+                300
+            );
+            $(".right-download").animate(
+                {
+                    right: 30,
+                },
+                300
+            );
+        }
+    } else {
+        if (!downloadFlag) {
+            downloadFlag = true;
+            $(".left-download").animate(
+                {
+                    left: -210,
+                },
+                300
+            );
+            $(".right-download").animate(
+                {
+                    right: -210,
+                },
+                300
+            );
+        }
+    }
+}
+let downloadTimer = setInterval(getDownload, 200);
+
+// 两侧弹出窗口关闭按钮
+$(".btn-downloadClose").on("click", function () {
+    downloadFlag = false;
+    $(this).parent().animate(
+        {
+            left: -210,
+        },
+        300
+    );
+});
+$(".btn-dsdownloadClose").on("click", function () {
+    downloadFlag = false;
+    $(this).parent().animate(
+        {
+            right: -210,
+        },
+        300
+    );
 });
