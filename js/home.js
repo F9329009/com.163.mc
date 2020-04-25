@@ -390,8 +390,7 @@ $(".carousel-list").on("mousemove", "li", function () {
 
 // 第二版_第二块-新闻
 $(".news-nav ul").on("mouseover", "li", function () {
-    $(this).parent().children().removeClass("active");
-    $(this).addClass("active");
+    $(this).addClass("active").siblings("li").removeClass("active");
     $(".news-con")
         .stop()
         .animate(
@@ -401,4 +400,15 @@ $(".news-nav ul").on("mouseover", "li", function () {
             400,
             function () {}
         );
+});
+
+// 分享二维码切换
+$(".ewm-tab").on("mouseover", "a", function () {
+    $(this).addClass("active").siblings("a").removeClass("active");
+    $(".ewm-img").animate(
+        {
+            left: -$(".ewm-img>div").width() * $(this).index(),
+        },
+        400
+    );
 });
