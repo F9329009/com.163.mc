@@ -738,6 +738,19 @@ body {
     height: 943px;
     background: url(../images/banner1_e310a71.jpg) no-repeat center top;
 
+    &:after {
+        content: "";
+        width: 269px;
+        height: 34px;
+        bottom: 0;
+        left: 50%;
+        z-index: 2;
+        position: absolute;
+        margin-left: -600px;
+        background-repeat: no-repeat;
+        background: url(../images/index_z_a435eef.png) -66px -218px;
+    }
+
     .header-slogan {
         position: absolute;
         width: 674px;
@@ -926,12 +939,12 @@ body {
 
     &:after {
         content: "";
+        width: 101px;
+        height: 340px;
+        background: url(../images/box2_dc1906e.png) no-repeat;
         position: absolute;
-        top: -34px;
-        left: 0;
-        width: 269px;
-        height: 34px;
-        background: url(../images/index_z_a435eef.png) -66px -218px;
+        top: 23px;
+        right: -101px;
     }
 
     .ban-box {
@@ -1162,6 +1175,71 @@ body {
                 text-overflow: ellipsis;
                 height: 36px;
                 transition: all 0.5s ease;
+            }
+        }
+    }
+
+    .share-box {
+        width: 125px;
+        height: 317px;
+        border: 5px solid #28bd09;
+        margin-top: 29px;
+        float: right;
+        position: relative;
+
+        &:after {
+            content: "";
+            width: 52px;
+            height: 51px;
+            background: url(https://mc.res.netease.com/pc/gw/20180605105342/img/share_bg_67f593f.png)
+                no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .share-p1 {
+            color: #333;
+            font-weight: 700;
+            font-size: 20px;
+            margin-top: 28px;
+            text-align: center;
+        }
+
+        .share-p2 {
+            color: #999;
+            text-align: center;
+        }
+
+        ul {
+            display: block;
+            list-style: none;
+            float: left;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 25px;
+        }
+
+        li {
+            float: left;
+            width: 20px;
+            height: 20px;
+
+            a {
+                display: inline-block;
+                float: left;
+                font-size: 20px;
+                line-height: 20px;
+                text-decoration: none;
+                color: #999;
+                margin-right: 3px;
+                width: 100%;
+                height: 100%;
+
+                &:hover {
+                    color: #28bd09;
+                }
             }
         }
     }
