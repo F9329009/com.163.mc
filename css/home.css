@@ -1022,14 +1022,15 @@ body {
   list-style: none;
   float: left;
   padding: 0;
-  margin: 0;
+  margin: 10px 0;
   width: 100%;
   height: 25px;
+  text-align: center;
 }
 .part1 .share-box li {
-  float: left;
+  display: inline-block;
   width: 20px;
-  height: 20px;
+  height: 19px;
 }
 .part1 .share-box li a {
   display: inline-block;
@@ -1042,6 +1043,88 @@ body {
   width: 100%;
   height: 100%;
 }
-.part1 .share-box li a:hover {
-  color: #28bd09;
+.part1 .share-box li:nth-child(1) a {
+  background-image: url(../images/share-1.png);
+}
+.part1 .share-box li:nth-child(2) a {
+  background-image: url(../images/share-2.png);
+}
+.part1 .share-box li:nth-child(3) a {
+  background-image: url(../images/share-3.png);
+}
+.part1 .share-box li:nth-child(4) a {
+  background-image: url(../images/share-4.png);
+}
+.part1 .share-box li:nth-child(1) a:hover {
+  background-image: url(../images/share-1h.png);
+}
+.part1 .share-box li:nth-child(2) a:hover {
+  background-image: url(../images/share-2h.png);
+}
+.part1 .share-box li:nth-child(3) a:hover {
+  background-image: url(../images/share-3h.png);
+}
+.part1 .share-box li:nth-child(4) a:hover {
+  background-image: url(../images/share-4h.png);
+}
+.part1 .share-box .line {
+  width: 88px;
+  margin-left: 13px;
+  height: 1px;
+  background: #ccc;
+  margin-top: 44px;
+}
+.part1 .share-box .ewm-box {
+  width: 116px;
+  margin: 5px auto 0;
+}
+.part1 .share-box .ewm-tab {
+  text-align: center;
+}
+.part1 .share-box .ewm-tab a {
+  color: #333;
+  width: 38px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  display: inline-block;
+}
+.part1 .share-box .ewm-tab .active {
+  color: #33b916;
+  background: url(https://mc.res.netease.com/pc/gw/20180605105342/img/ny/line_318f36e.png) center bottom no-repeat;
+}
+.part1 .share-box .ewm-wrap {
+  width: 110px;
+  margin: 10px auto;
+}
+.part1 .share-box .ewm-wrap .tempWrap {
+  overflow: hidden;
+  position: relative;
+  width: 110px;
+}
+.part1 .share-box .ewm-wrap .ewm-img {
+  width: 220px;
+  left: 0px;
+  position: relative;
+  overflow: hidden;
+  padding: 0px;
+  margin: 0px;
+}
+.part1 .share-box .ewm-wrap img {
+  width: 100px;
+  margin: 0 auto;
+  display: block;
+}
+.part1 .share-box .ewm-wrap p {
+  text-align: center;
+  line-height: 17px;
+}
+.part1 .share-box .ewm-wrap a {
+  width: 100%;
+  margin: 0;
+  text-decoration: underline;
+  line-height: 170%;
+  color: #333;
+  text-align: center;
+  display: inline-block;
 }
