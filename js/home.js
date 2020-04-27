@@ -288,7 +288,7 @@ $(".video .stop").on("click", function () {
 });
 
 // 浮动导航-固定顶部
-$(document).scroll(function () {
+function getFloatnav() {
     if ($(document).scrollTop() >= $(".topbar").height()) {
         $(".floatnav")
             .css({
@@ -316,7 +316,9 @@ $(document).scroll(function () {
             .siblings(".floatnav-left")
             .hide();
     }
-});
+}
+getFloatnav();
+$(document).scroll(getFloatnav);
 
 // 第二版_第一块-轮播图
 function getCarousel() {
@@ -388,7 +390,7 @@ $(".carousel-list").on("mousemove", "li", function () {
     carouselTimer = setInterval(getCarousel, 2000);
 });
 
-// 第二版_第二块-新闻
+// 第二版_第一块-新闻
 $(".news-nav ul").on("mouseover", "li", function () {
     $(this).addClass("active").siblings("li").removeClass("active");
     $(".news-con")
@@ -410,5 +412,162 @@ $(".ewm-tab").on("mouseover", "a", function () {
             left: -$(".ewm-img>div").width() * $(this).index(),
         },
         400
+    );
+});
+
+// 第二版_第三块-切换作品类型
+$(".part3-nav-list").on("mouseover", "li", function () {
+    let oLi = $(this);
+    $(this).addClass("active").siblings().removeClass("active");
+    $(".part3-box>ul").animate(
+        {
+            opacity: 0,
+        },
+        100,
+        function () {
+            $(".part3-box>ul").hide().eq(oLi.prevAll().length).show().animate(
+                {
+                    opacity: 1,
+                },
+                100
+            );
+        }
+    );
+});
+
+// 第二版_第三块-投票(点赞)
+// 初始化点赞数量
+zanArr = [1999, 1461, 1727, 2868, 1272, 1908, 1698, 1356];
+zanArr.forEach(function (v, i) {
+    $(".part3-box-ul1 li>p").eq(i).text(v);
+});
+
+$(".part3-box-ul1 li>p").on("click", function () {
+    if (+$(this).text() == zanArr[$(this).parent().prevAll().length]) {
+        $(this).text(+$(this).text() + 1);
+        $(".alert-vote")
+            .css({
+                opacity: 1,
+                display: "block",
+            })
+            .find(".alert-vote-text")
+            .text("投票成功");
+    } else {
+        $(".alert-vote")
+            .css({
+                opacity: 1,
+                display: "block",
+            })
+            .find(".alert-vote-text")
+            .text("今天已经投过票了，请明天再来");
+    }
+});
+
+$(".alert-image-pop-link").on("click", function () {
+    $(".part3-box-ul1 li>p").click();
+    // $(this).text(+$(this).text() + 1);
+    $(this)
+        .show()
+        .text(
+            $(".part3-box-ul1")
+                .find(
+                    `img[src='${$(this)
+                        .parents(".alert-image-pop")
+                        .find(".alert-image-pop-con img")
+                        .attr("src")}']`
+                )
+                .parents("li")
+                .find(">p")
+                .text()
+        );
+});
+
+// 打开弹窗
+function getAlertImage(n) {
+    console.log(n);
+    $(".alert-image-pop-name").text($(n).find("p").eq(0).text());
+    $(".alert-image-pop-author").text($(n).find("p").eq(1).text());
+
+    $(".alert-image-pop-con")
+        .find("img")
+        .attr("src", $(n).siblings("img").attr("src"));
+}
+
+// 打开点赞弹窗
+$(".part3-box-ul1 .list-box-zan").on("click", function () {
+    $(".alert-image").show();
+    $(".alert-image-pop-link")
+        .show()
+        .text($(this).parents("li").find(">p").text());
+    getAlertImage(this);
+});
+
+// 打开图片弹窗
+$(".part3-box-ul2 .list-box-zan").on("click", function () {
+    console.log($(this).find("p"));
+    $(".alert-image").show();
+    $(".alert-image-pop-dl").show();
+    getAlertImage(this);
+});
+
+// 关闭图片弹窗
+$(".alert-image-off").on("click", function () {
+    $(".alert-image").hide();
+    $(".alert-image-pop-dl").hide();
+    $(".alert-image-pop-link").hide();
+});
+
+// 第二版_第三块-点赞遮罩
+$(".part3-box li").hover(
+    function () {
+        $(this)
+            .find(".list-box-zan")
+            .animate(
+                {
+                    height: "100%",
+                    opacity: 1,
+                },
+                100,
+                function () {
+                    $(this).parents("li").find(">p").show();
+                }
+            );
+    },
+    function () {
+        $(this)
+            .find(".list-box-zan")
+            .animate(
+                {
+                    height: 0,
+                    opacity: 0,
+                },
+                100,
+                function () {
+                    $(this).parents("li").find(">p").hide();
+                }
+            );
+    }
+);
+
+// 点赞结果弹窗
+$(".alert-vote-wrap a").on("click", function () {
+    $(".alert-vote").css({
+        opacity: 0,
+        display: "none",
+    });
+});
+
+// 下载按钮点击跳转
+$(".alert-image-pop-dl").on("click", function () {
+    window.open(
+        $(this).parents(".alert-image-pop").find("img").attr("src"),
+        "_self"
+    );
+});
+
+$(".part3-box-ul2>li>p").on("click", function () {
+    window.open(
+        $(this).siblings(".part3-list-box").find("img").attr("src"),
+        "_self"
     );
 });
