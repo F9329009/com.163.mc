@@ -456,28 +456,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 100;
+    z-index: 10000;
     display: none;
-}
-.video-bg {
-    width: 100%;
-    height: 100%;
-    background: url(../images/bg-pop_efca8c6.png) center;
 
-    video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-top: -450px/2;
-        margin-left: -800px/2;
+    .video-bg {
+        background: url(../images/bg-pop_efca8c6.png) center;
     }
 
     .stop {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-left: 420px;
-        margin-top: -225px;
         width: 27px;
         height: 27px;
         background: url(../images/close_cbca339.png) no-repeat center;
@@ -488,6 +474,53 @@ body {
         &:hover {
             transform: rotate(90deg);
         }
+    }
+}
+
+.hm-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: none;
+
+    .video-bg {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .stop {
+        width: 48px;
+        height: 48px;
+        background: url(https://mc.res.netease.com/pc/gw/20180605105342/img/icon_707d7fa.png) -239px
+            0 no-repeat;
+        right: -80px;
+
+        &:hover {
+            background-position: -528px 0;
+        }
+    }
+}
+.video-bg {
+    width: 100%;
+    height: 100%;
+
+    video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -450px/2;
+        margin-left: -800px/2;
+    }
+
+    .stop {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: 420px;
+        margin-top: -225px;
     }
 }
 
@@ -1880,7 +1913,7 @@ body {
         }
     }
 
-    .part3-box-ul2 {
+    .part3-box-image {
         display: none;
         li {
             width: 183px;
@@ -1900,5 +1933,223 @@ body {
                 background: url(../images/dl_e37edb3.png) no-repeat;
             }
         }
+    }
+}
+
+// 第四块
+.part4 {
+    margin: 27px auto 100px;
+    height: 410px;
+
+    .part4-nav {
+        width: 100%;
+        height: 45px;
+
+        .part4-nav-title {
+            width: 168px;
+            height: 45px;
+            font-size: 14px;
+            float: left;
+            background: url(../images/video_tit_bg_1e31449.png) no-repeat;
+        }
+
+        p {
+            text-align: center;
+
+            &:nth-child(1) {
+                color: #333;
+                font-weight: 700;
+                font-size: 20px;
+            }
+
+            &:nth-child(2) {
+                color: #999;
+            }
+        }
+
+        ul {
+            float: left;
+            margin-left: 30px;
+        }
+
+        li {
+            width: 112px;
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            float: left;
+            margin-right: 3px;
+            font-size: 16px;
+            transition: all ease 0.5s;
+
+            a {
+                color: #212121;
+                position: relative;
+                left: -8px;
+                top: -1px;
+            }
+        }
+
+        .active {
+            background: url(../images/video_bg_eaa14b3.png) no-repeat;
+
+            a {
+                color: #fff;
+            }
+        }
+
+        .part4-nav-more {
+            float: left;
+            color: #26ae0a;
+            height: 45px;
+            line-height: 45px;
+            margin-left: 10px;
+
+            &:hover i {
+                transform: rotate(180deg);
+            }
+
+            i {
+                width: 34px;
+                height: 34px;
+                display: inline-block;
+                background: url(../images/more1_ab19103.png) center right
+                    no-repeat;
+                margin: -1px 0 0 10px;
+                vertical-align: middle;
+                transition: all ease 0.5s;
+            }
+        }
+    }
+
+    .part4-box {
+        margin-top: 41px;
+
+        .part4-box-big {
+            width: 486px;
+            height: 322px;
+            float: left;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .part4-box-video {
+            width: 486px;
+            height: 274px;
+        }
+
+        .part4-box-img {
+            width: 486px;
+            height: 274px;
+        }
+
+        .part4-box-title {
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            background: #333;
+            color: #fff;
+        }
+    }
+
+    .part4-box-list {
+        width: 714px;
+        height: 322px;
+        float: left;
+
+        .video-box-list-item {
+            height: 322px;
+            margin-left: 12px;
+        }
+
+        li {
+            float: left;
+            margin-left: 12px;
+            width: 221px;
+            height: 169px;
+            position: relative;
+            cursor: pointer;
+
+            > p {
+                color: #fff;
+                text-align: right;
+                background: url(../images/zan_d2c59b2.png) center right
+                    no-repeat;
+                padding-right: 25px;
+                position: absolute;
+                top: 90px;
+                right: 10px;
+                z-index: 10;
+                line-height: 20px;
+
+                &:hover {
+                    background: url(../images/zan_h_bbf3989.png) center right
+                        no-repeat;
+                }
+            }
+        }
+
+        img {
+            width: 221px;
+            height: 117px;
+        }
+
+        .video-box-list-img p {
+            &:nth-last-child(2) {
+                color: #4d4c4c;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                line-height: 19px;
+                font-size: 13px;
+            }
+
+            &:nth-last-child(1) {
+                color: #27881f;
+                line-height: 18px;
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+// 遮罩
+.video-hm {
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    left: 0;
+    top: 0;
+    opacity: 0;
+    height: 0;
+    transition: all ease 0.5s;
+
+    .video-btn {
+        width: 46px;
+        height: 46px;
+        margin: 35px auto 0;
+        background: url(../images/video_btn_b0ef8aa.png) no-repeat;
+    }
+}
+
+.video-bf {
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    left: 0;
+    top: 0;
+    opacity: 1;
+    height: 117px;
+    transition: all ease 0.5s;
+
+    .video-btn {
+        width: 46px;
+        height: 46px;
+        margin: 35px auto 0;
+        background: url(../images/video_btn_b0ef8aa.png) no-repeat;
     }
 }

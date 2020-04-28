@@ -439,10 +439,10 @@ $(".part3-nav-list").on("mouseover", "li", function () {
 // 初始化点赞数量
 zanArr = [1999, 1461, 1727, 2868, 1272, 1908, 1698, 1356];
 zanArr.forEach(function (v, i) {
-    $(".part3-box-ul1 li>p").eq(i).text(v);
+    $(".part3-box-over li>p").eq(i).text(v);
 });
 
-$(".part3-box-ul1 li>p").on("click", function () {
+$(".part3-box-over li>p").on("click", function () {
     if (+$(this).text() == zanArr[$(this).parent().prevAll().length]) {
         $(this).text(+$(this).text() + 1);
         $(".alert-vote")
@@ -463,13 +463,27 @@ $(".part3-box-ul1 li>p").on("click", function () {
     }
 });
 
+// 无检测点赞
+$(".part4-box-list li").on("click", ">p", function () {
+    $(".alert-vote")
+        .css({
+            opacity: 1,
+            display: "block",
+        })
+        .find(".alert-vote-text")
+        .text("投票成功");
+    $(this).text(+$(this).text() + 1);
+    return false;
+});
+
+// 点赞窗口内点赞
 $(".alert-image-pop-link").on("click", function () {
-    $(".part3-box-ul1 li>p").click();
+    $(".part3-box-over li>p").click();
     // $(this).text(+$(this).text() + 1);
     $(this)
         .show()
         .text(
-            $(".part3-box-ul1")
+            $(".part3-box-over")
                 .find(
                     `img[src='${$(this)
                         .parents(".alert-image-pop")
@@ -494,7 +508,7 @@ function getAlertImage(n) {
 }
 
 // 打开点赞弹窗
-$(".part3-box-ul1 .list-box-zan").on("click", function () {
+$(".part3-box-over .list-box-zan").on("click", function () {
     $(".alert-image").show();
     $(".alert-image-pop-link")
         .show()
@@ -503,7 +517,7 @@ $(".part3-box-ul1 .list-box-zan").on("click", function () {
 });
 
 // 打开图片弹窗
-$(".part3-box-ul2 .list-box-zan").on("click", function () {
+$(".part3-box-image .list-box-zan").on("click", function () {
     console.log($(this).find("p"));
     $(".alert-image").show();
     $(".alert-image-pop-dl").show();
@@ -549,7 +563,7 @@ $(".part3-box li").hover(
     }
 );
 
-// 点赞结果弹窗
+// 关闭点赞结果弹窗
 $(".alert-vote-wrap a").on("click", function () {
     $(".alert-vote").css({
         opacity: 0,
@@ -565,9 +579,94 @@ $(".alert-image-pop-dl").on("click", function () {
     );
 });
 
-$(".part3-box-ul2>li>p").on("click", function () {
+$(".part3-box-image>li>p").on("click", function () {
     window.open(
         $(this).siblings(".part3-list-box").find("img").attr("src"),
         "_self"
     );
+});
+
+// 第二版_第四块-导航
+$(".part4-nav").on("mouseover", "li", function () {
+    $(this).addClass("active").siblings().removeClass("active");
+});
+
+// 第二版_第四块-播放按钮遮罩(移入显示)
+$(".video-hm")
+    .parent()
+    .hover(
+        function () {
+            $(this).find(".video-hm").css({
+                opacity: 1,
+                height: "100%",
+            });
+            $(this)
+                .find(".video-btn")
+                .css({
+                    marginTop:
+                        ($(this).height() -
+                            $(this).find(".video-btn").height()) /
+                        2,
+                    opacity: 1,
+                });
+        },
+        function () {
+            $(this).find(".video-hm").css({
+                opacity: 1,
+                height: 0,
+            });
+            $(this).find(".video-btn").css({
+                opacity: 0,
+            });
+        }
+    );
+
+// 第二版_第四块-播放按钮遮罩(移入隐藏)
+$(".video-bf")
+    .parent()
+    .hover(
+        function () {
+            $(this).find(".video-bf").css({
+                opacity: 0,
+                height: 0,
+            });
+            $(this).find(".video-btn").css({
+                opacity: 0,
+            });
+        },
+        function () {
+            $(this)
+                .find(".video-bf")
+                .css({
+                    opacity: 1,
+                    height: $(this).find("img").height(),
+                });
+            $(this)
+                .find(".video-btn")
+                .css({
+                    marginTop:
+                        ($(this).find("img").height() -
+                            $(this).find(".video-btn").height()) /
+                        2,
+                    opacity: 1,
+                });
+        }
+    );
+
+// 第二版_第四块-打开视频
+$(".video-hm")
+    .parent()
+    .on("click", function () {
+        $(".hm-video").show().find("video").trigger("play")[0].currentTime = 0;
+    });
+
+$(".video-bf")
+    .parent()
+    .on("click", function () {
+        $(".hm-video").show().find("video").trigger("play")[0].currentTime = 0;
+    });
+
+// 第二版_第四块-关闭视频
+$(".hm-video .stop").on("click", function () {
+    $(".hm-video").hide().find("video").trigger("pause");
 });
