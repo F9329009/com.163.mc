@@ -716,25 +716,7 @@ $(".gs-title").on("mouseover", "a", function () {
         );
 });
 
-// 第二版_第五块-tj-nav切换
-$(".tj-nav").on("click", "a", function () {
-    $(this).addClass("active").siblings().removeClass("active");
-    if ($(this).index() == 1) {
-        $(".tj-wrap").addClass("tbShengwu");
-        $(".sideNav a")
-            .eq(0)
-            .addClass("active")
-            .siblings()
-            .removeClass("active");
-        $(".sideNav").show();
-    } else {
-        $(".tj-wrap").removeClass("tbShengwu");
-        $(".sideNav").hide();
-    }
-    $(".subNav a").eq(0).click();
-});
-
-// 第二版_第五块-sideNav切换
+// 第二版_第五块
 // 合成配方存储对象
 let closeArr = [
     {
@@ -929,12 +911,36 @@ let nameArr = [
         ],
     },
 ];
+// 第二版_第五块-tj-nav切换
+$(".tj-nav").on("click", "a", function () {
+    $(this).addClass("active").siblings().removeClass("active");
+    // 生成右边nav列表
+    let subHtml = "";
+    $.each(nameArr[$(this).index()], function (i, n) {
+        subHtml += `<a href="javascript:;" data-id="${i}"><img src="./upload/tj/pic${i}.png"
+        alt=""></a>`;
+    });
+    $(".subNav").html(subHtml).find("a").eq(0).click();
+    // 如果是第二个a则显示二级菜单
+    if ($(this).index() == 1) {
+        $(".tj-wrap").addClass("tbShengwu");
+        // 选中第一个
+        $(".sideNav a").eq(0).click();
+        $(".sideNav").show();
+    } else {
+        $(".tj-wrap").removeClass("tbShengwu");
+        $(".sideNav").hide();
+    }
+    $(".subNav a").eq(0).click();
+});
+
+// 第二版_第五块-sideNav切换
 $(".subNav").on("click", "a", function () {
     let id = $(this).attr("data-id");
     // 显示选择状态
     $(this).addClass("active").siblings().removeClass("active");
     // 更换图片
-    $(".bigImg img").attr("src", `./upload/tj/pic${id}.png`);
+    $(".bigImg img").attr("src", `./upload/tj/big/pic${id}.png`);
     // 更换名字和简介
     $(".desc p").html(
         `<em>${nameArr[$(".tj-nav .active").index()][id][0]}</em>${
@@ -954,7 +960,7 @@ $(".subNav").on("click", "a", function () {
                 }.png`
             );
         });
-        $(".peifang-img img").attr("src", `./upload/tj/pic${id}.png`);
+        $(".peifang-img img").attr("src", `./upload/tj/big/pic${id}.png`);
     } else {
         $(".peifang").hide();
     }
@@ -965,11 +971,16 @@ $(".sideNav").on("click", "a", function () {
     let indxeArr;
     $(this).addClass("active").siblings().removeClass("active");
     $(".subNav a").hide();
-    if ($(".sideNav avtive").index() == 0) {
+    console.log(
+        $(".sideNav .active").index(),
+        $(".sideNav"),
+        $(".sideNav .active")
+    );
+    if ($(".sideNav .active").index() == 0) {
         indxeArr = [128, 129];
-    } else if ($(".sideNav avtive").index() == 1) {
+    } else if ($(".sideNav .active").index() == 1) {
         indxeArr = [130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140];
-    } else if ($(".sideNav avtive").index() == 2) {
+    } else if ($(".sideNav .active").index() == 2) {
         indxeArr = [
             141,
             142,
@@ -988,11 +999,20 @@ $(".sideNav").on("click", "a", function () {
             155,
             156,
         ];
-    } else if ($(".sideNav avtive").index() == 3) {
-        indxeArr = [128, 129];
-    } else if ($(".sideNav avtive").index() == 4) {
-        indxeArr = [128, 129];
-    } else if ($(".sideNav avtive").index() == 5) {
-        indxeArr = [128, 129];
+    } else if ($(".sideNav .active").index() == 3) {
+        indxeArr = [130, 134, 157];
+    } else if ($(".sideNav .active").index() == 4) {
+        indxeArr = [158, 159];
+    } else if ($(".sideNav .active").index() == 5) {
+        indxeArr = [157, 160, 161, , 162, 163, 164];
     }
+    // 生成右边nav列表
+    let subHtml = "";
+    console.log(indxeArr);
+    indxeArr.forEach(function (n, i) {
+        console.log(i, n);
+        subHtml += `<a href="javascript:;" data-id="${n}"><img src="./upload/tj/pic${n}.png"
+        alt=""></a>`;
+    });
+    $(".subNav").html(subHtml).find("a").eq(0).click();
 });
