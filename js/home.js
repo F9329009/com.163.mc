@@ -948,7 +948,6 @@ $(".subNav").on("click", "a", function () {
         }`
     );
     // 如果有合成配方显示并更新合成配方，没有则隐藏
-    console.log($(".tj-nav .active").index());
     if (closeArr[$(".tj-nav .active").index()][id] != undefined) {
         $(".peifang").show();
 
@@ -971,17 +970,10 @@ $(".sideNav").on("click", "a", function () {
     let indxeArr;
     $(this).addClass("active").siblings().removeClass("active");
     $(".subNav a").hide();
-    console.log(
-        $(".sideNav .active").index(),
-        $(".sideNav"),
-        $(".sideNav .active")
-    );
-    if ($(".sideNav .active").index() == 0) {
-        indxeArr = [128, 129];
-    } else if ($(".sideNav .active").index() == 1) {
-        indxeArr = [130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140];
-    } else if ($(".sideNav .active").index() == 2) {
-        indxeArr = [
+    indxeArr = [
+        [128, 129],
+        [130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140],
+        [
             141,
             142,
             143,
@@ -998,18 +990,14 @@ $(".sideNav").on("click", "a", function () {
             154,
             155,
             156,
-        ];
-    } else if ($(".sideNav .active").index() == 3) {
-        indxeArr = [130, 134, 157];
-    } else if ($(".sideNav .active").index() == 4) {
-        indxeArr = [158, 159];
-    } else if ($(".sideNav .active").index() == 5) {
-        indxeArr = [157, 160, 161, , 162, 163, 164];
-    }
+        ],
+        [130, 134, 157],
+        [158, 159],
+        [157, 160, 161, , 162, 163, 164],
+    ];
     // 生成右边nav列表
     let subHtml = "";
-    console.log(indxeArr);
-    indxeArr.forEach(function (n, i) {
+    indxeArr[$(".sideNav .active").index()].forEach(function (n, i) {
         console.log(i, n);
         subHtml += `<a href="javascript:;" data-id="${n}"><img src="./upload/tj/pic${n}.png"
         alt=""></a>`;
