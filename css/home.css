@@ -2220,3 +2220,70 @@ body {
   bottom: 5px;
   right: 0;
 }
+.footer {
+  background: url(https://mc.res.netease.com/pc/gw/20180605105342/img/nav_bg_a91881e.jpg) center repeat-y;
+  text-align: center;
+}
+.footer .footer-box {
+  width: 1024px;
+  text-align: left;
+  margin: 0 auto;
+  padding: 15px 0 10px;
+  font-size: 12px;
+  line-height: 20px;
+}
+.footer .footer-box-part1 .footer-logo {
+  display: inline-block;
+  vertical-align: middle;
+  height: 48px;
+  min-width: 300px;
+}
+.footer .footer-box-part1 .footer-logo a {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 2px;
+}
+.footer .footer-box-part1 .footer-logo a:nth-child(1) img {
+  padding-right: 0;
+}
+.footer .footer-box-part1 .footer-logo img {
+  padding-right: 15px;
+  padding-top: 5px;
+  border: 0;
+  vertical-align: middle;
+}
+.footer .footer-box-part1 .footer-nav {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  z-index: 1;
+}
+.footer .footer-box-part1 .footer-nav i {
+  display: inline-block;
+  color: #fff;
+}
+.footer .footer-box-part1 .footer-nav a {
+  color: #fff;
+}
+.footer .footer-box-part1 .footer-nav .footer-nav-i2 {
+  height: 28px;
+  line-height: 28px;
+  text-align: left;
+}
+.footer .footer-box-part2 {
+  padding-top: 10px;
+  line-height: 24px;
+  color: #999;
+}
+.footer .footer-box-part2 span {
+  display: inline-block;
+  vertical-align: top;
+}
+.footer .footer-box-part2 a {
+  color: #fff;
+  display: inline-block;
+  vertical-align: top;
+}
+.footer .footer-box-part3 {
+  color: #999;
+}
