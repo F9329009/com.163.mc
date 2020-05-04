@@ -804,13 +804,16 @@ body {
 .floatnav .floatnav-list li:nth-child(6):hover p {
   color: #e0b00b;
 }
+.floatnav .floatnav-list li:nth-child(7):hover .sqhd-hover {
+  display: block;
+}
 .floatnav .floatnav-list li:nth-child(7) i {
   background: url(../images/nav06_704430e.png) no-repeat;
 }
 .floatnav .floatnav-list li:nth-child(7):hover i {
   background: url(../images/nav06_h_b356308.png) no-repeat;
 }
-.floatnav .floatnav-list li:nth-child(7):hover p {
+.floatnav .floatnav-list li:nth-child(7):hover > p {
   color: #e32997;
 }
 .floatnav .floatnav-list li:nth-child(8) i {
@@ -837,6 +840,163 @@ body {
   height: 12px;
   line-height: 12px;
   margin-top: 15px;
+}
+.floatnav .sqhd-hover {
+  position: absolute;
+  display: none;
+  width: 1920px;
+  height: 246px;
+  top: 90px;
+  left: -875px;
+  background: #dee8ec;
+}
+.floatnav .sqhd-hover:hover {
+  display: block;
+}
+.floatnav .sqhd-hover .arr {
+  position: absolute;
+  width: 23px;
+  height: 11px;
+  background: url(../images/top_i_396e040.png) no-repeat;
+  top: -11px;
+  left: 1767px;
+}
+.floatnav .sqhd-hover .item1 {
+  float: left;
+  width: 102px;
+  height: 123px;
+  margin-top: 58px;
+}
+.floatnav .sqhd-hover .item1 a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.floatnav .sqhd-hover .item1:nth-child(2) .icon {
+  background: url(../images/lt_e15901c.png) no-repeat center center;
+}
+.floatnav .sqhd-hover .item1:nth-child(3) .icon {
+  background: url(../images/dh_d202db9.png) no-repeat center center;
+}
+.floatnav .sqhd-hover .item1:nth-child(4) .icon {
+  background: url(../images/kf_889affe.png) no-repeat center center;
+}
+.floatnav .sqhd-hover .item2 {
+  float: left;
+  width: 125px;
+  height: 153px;
+  margin: 39px 0 0 30px;
+}
+.floatnav .sqhd-hover .item2 img {
+  display: block;
+  width: 91px;
+  height: 91px;
+  margin: 0 auto;
+}
+.floatnav .sqhd-hover .icon {
+  width: 102px;
+  height: 57px;
+  border-right: 2px solid #bac3c6;
+}
+.floatnav .sqhd-hover .p-text {
+  display: block;
+  width: 100%;
+  color: #282629;
+  line-height: 22px;
+  margin: 12px auto 0;
+  text-align: center;
+  font-size: 12px;
+}
+.floatnav .sqhd-hover .s1 {
+  float: left;
+  width: 2px;
+  background: #bac3c6;
+  height: 72px;
+  margin: 51px 0 0 35px;
+}
+.floatnav .sqhd-hover .s2 {
+  float: left;
+  width: 2px;
+  background: #bac3c6;
+  height: 125px;
+  margin: 36px 0 0 40px;
+}
+.floatnav .sqhd-hover .item3 {
+  float: left;
+  width: 1180px;
+  height: 200px;
+  margin: 17px 0 0 43px;
+}
+.floatnav .sqhd-hover .item3 .item3-title {
+  color: #282629;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.floatnav .sqhd-hover .item3 .qqwrap {
+  width: 100%;
+  height: 135px;
+}
+.floatnav .sqhd-hover .item3 .qqitem {
+  width: 1180px;
+  height: 45px;
+  border-top: 1px dashed #b0b8bb;
+}
+.floatnav .sqhd-hover .item3 .item {
+  float: left;
+  width: 236px;
+  height: 45px;
+  background: url(../images/arr_347c7ad.png) no-repeat left center;
+}
+.floatnav .sqhd-hover .item3 .item span {
+  float: left;
+  width: 138px;
+  height: 100%;
+  margin-left: 5px;
+  font-size: 14px;
+  color: #282629;
+  line-height: 45px;
+  text-align: center;
+}
+.floatnav .sqhd-hover .item3 .item a {
+  float: left;
+  width: 75px;
+  height: 30px;
+  background: #28bd09;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 8px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+.floatnav .sqhd-hover .item3 .yiuxi {
+  width: 547px;
+  height: 40px;
+  margin: 10px 0 0 660px;
+  line-height: 40px;
+}
+.floatnav .sqhd-hover .item3 .yiuxi a {
+  font-size: 14px;
+  text-decoration: underline;
+  color: #333;
+  padding-left: 10px;
+  opacity: 0.8;
+}
+.floatnav .sqhd-hover .item3 .yiuxi .fp-btn {
+  padding-left: 35px;
+  height: 40px;
+  line-height: 40px;
+  background: url(../images/1_3ab7714.png) no-repeat left center;
+  background-size: 31px 31px;
+  display: block;
+  float: left;
+  margin-right: 15px;
+}
+.floatnav .sqhd-hover .item3 .yiuxi span {
+  color: #28bd09;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
 }
 .video-hm {
   position: absolute;
