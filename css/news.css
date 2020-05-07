@@ -3,6 +3,7 @@ body {
   font-size: 14px;
   line-height: 24px;
   font-family: "Microsoft Yahei";
+  overflow-x: hidden;
 }
 .topbar {
   position: relative;
@@ -1080,6 +1081,10 @@ body {
   display: inline-block;
   position: relative;
   font-size: 14px;
+}
+.naws-head .head-tab a:hover {
+  color: #fff;
+  background: url(../images/tab_bg_a65f16f.png) no-repeat;
 }
 .naws-head .head-tab .active {
   color: #fff;
