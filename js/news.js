@@ -309,7 +309,6 @@ function getFloatnav() {
 }
 getFloatnav();
 $(document).scroll(getFloatnav);
-
 // 右侧浮动打开
 $(".side-show").on("click", function () {
     $(this).css("right", -50);
