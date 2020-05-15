@@ -320,7 +320,7 @@ $(".close").on("click", function () {
     $(".side").css("right", -$(".side").width() - $(".close").width());
     $(".side-show").css("right", 0);
 });
-// 默认自动打开
+// 默认自动打开悬浮框
 $(".side-show").click();
 
 // 右边浮动-轮播图
